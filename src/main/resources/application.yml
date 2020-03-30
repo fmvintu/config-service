@@ -1,0 +1,20 @@
+##################################################################################
+# Config Service
+##################################################################################
+server.port: ${PORT:4231}
+spring:
+  application:
+    name: config-service
+  cloud.config:
+    server:
+      git:
+        # username: user
+        # password: pass
+        uri: https://github.com/fmvintu/config-repo.git
+        searchPaths: configuration
+        clone-on-start: true
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
